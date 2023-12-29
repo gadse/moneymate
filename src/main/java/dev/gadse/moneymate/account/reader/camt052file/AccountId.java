@@ -1,15 +1,14 @@
 package dev.gadse.moneymate.account.reader.camt052file;
 
 import jakarta.xml.bind.annotation.XmlElement;
-
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-class EntryDetails {
+public class AccountId {
 
-    @XmlElement( name = "TxDtls")
-    private TransactionDetails transactionDetails;
+    @XmlElement( name = "IBAN" )
+    private String iban;
 
 }

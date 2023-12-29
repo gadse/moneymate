@@ -1,7 +1,11 @@
 package dev.gadse.moneymate.account.reader.camt052file;
 
-import javax.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
+@Getter
 class TransactionDetails {
     @XmlElement( name = "RltdPties")
     private RelatedParties relatedParties;

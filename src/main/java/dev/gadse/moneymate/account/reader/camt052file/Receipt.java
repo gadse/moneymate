@@ -1,9 +1,14 @@
 package dev.gadse.moneymate.account.reader.camt052file;
 
-import javax.xml.bind.annotation.XmlElement;
-import java.time.LocalTime;
+import jakarta.xml.bind.annotation.XmlElement;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.List;
 
+@RequiredArgsConstructor
+@Getter
 class Receipt {
 
     @XmlElement
@@ -13,12 +18,15 @@ class Receipt {
     private String sequenceNumber;
 
     @XmlElement( name = "CreDtTm" )
-    private LocalTime creDtTm;
+    private XMLGregorianCalendar creDtTm;
 
     @XmlElement( name = "Bal" )
     private List<Balance> balances;
 
     @XmlElement( name = "Ntry" )
     private List<Entry> entries;
+
+    @XmlElement( name = "Acct")
+    private CAMT052Account account;
 
 }
